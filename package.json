@@ -1,0 +1,16 @@
+{
+  "name": "beam",
+  "version": "1.0.0",
+  "description": "Browser-based file transfer between devices on the same network. No installs, no accounts, nothing stored.",
+  "private": true,
+  "license": "MIT",
+  "repository": "github:DhananjaySarathe/beam-file-transfer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

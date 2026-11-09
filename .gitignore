@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+
+# Local tool state. It holds machine paths and session ids, so it stays off git.
+.claude/
+.impeccable/
+
+# Never commit environment files or keys.
+.env
+.env.*
+*.pem
