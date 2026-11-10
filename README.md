@@ -1,5 +1,7 @@
 # Beam
 
+**Website and downloads: https://dhananjaysarathe.github.io/beam/**
+
 Send files, text and links between your devices from the browser. One computer runs Beam; every other device just opens a web page. No apps, no accounts, no cables.
 
 ## Download the Mac app
