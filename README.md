@@ -2,9 +2,15 @@
 
 Send files, text and links between your devices from the browser. One computer runs Beam; every other device just opens a web page. No apps, no accounts, no cables.
 
+## Download the Mac app
+
+On a Mac you can skip the setup below: download Beam from the [latest release](https://github.com/DhananjaySarathe/beam-file-transfer/releases/latest), open the file and drag Beam into Applications. Pick the `arm64` file for Apple Silicon Macs (M1 and later) and the `x64` file for Intel Macs.
+
+The app is not signed with an Apple developer certificate, so the first time macOS says it cannot verify it: open System Settings → Privacy & Security, find the message about Beam and choose Open Anyway. The app's code is on the [`mac-app` branch](https://github.com/DhananjaySarathe/beam-file-transfer/tree/mac-app).
+
 ## Get it running
 
-You need [Node.js](https://nodejs.org) 20 or newer. Nothing else gets installed.
+To run it from the source instead, on any computer, you need [Node.js](https://nodejs.org) 20 or newer. Nothing else gets installed.
 
 ```bash
 git clone https://github.com/DhananjaySarathe/beam-file-transfer.git
