@@ -8,7 +8,7 @@ Send files, text and links between your devices from the browser. One computer r
 
 On a Mac you can skip the setup below: download Beam from the [latest release](https://github.com/DhananjaySarathe/beam-file-transfer/releases/latest), open the file and drag Beam into Applications. Pick the `arm64` file for Apple Silicon Macs (M1 and later) and the `x64` file for Intel Macs.
 
-The app is not signed with an Apple developer certificate, so the first time macOS says it cannot verify it: open System Settings → Privacy & Security, find the message about Beam and choose Open Anyway. The app's code is on the [`mac-app` branch](https://github.com/DhananjaySarathe/beam-file-transfer/tree/mac-app).
+The app is not signed with an Apple developer certificate, so the first time macOS says it cannot verify it: open System Settings → Privacy & Security, find the message about Beam and choose Open Anyway. To build the app yourself, see [Or use the Mac app](#or-use-the-mac-app) below.
 
 ## Get it running
 
@@ -35,7 +35,7 @@ The first time, macOS or Windows may ask whether Node may accept incoming connec
 
 ## Or use the Mac app
 
-This branch (`mac-app`) also builds Beam as an ordinary Mac app, so the computer running it needs no Node and no terminal. Open Beam and its window shows the same page, with the address and QR code for your other devices under "Add a device". Other devices still just open that address in a browser.
+Beam also builds as an ordinary Mac app, so the computer running it needs no Node and no terminal. Open Beam and its window shows the same page, with the address and QR code for your other devices under "Add a device". Other devices still just open that address in a browser.
 
 Build it yourself:
 
