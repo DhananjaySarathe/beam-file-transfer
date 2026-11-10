@@ -25,6 +25,30 @@ The terminal prints two addresses and a QR code:
 
 The first time, macOS or Windows may ask whether Node may accept incoming connections. Allow it, or other devices won't be able to reach the page. Press Ctrl+C in the terminal to stop Beam.
 
+## Or use the Mac app
+
+This branch (`mac-app`) also builds Beam as an ordinary Mac app, so the computer running it needs no Node and no terminal. Open Beam and its window shows the same page, with the address and QR code for your other devices under "Add a device". Other devices still just open that address in a browser.
+
+Build it yourself:
+
+```bash
+npm install
+```
+
+```bash
+npm run dist
+```
+
+That leaves two disk images in `dist/`: `Beam-<version>-arm64.dmg` for Apple Silicon Macs and `Beam-<version>-x64.dmg` for Intel Macs. Open one and drag Beam into Applications. `npm run app` runs the app straight from the source instead.
+
+- **The app is not signed with an Apple developer certificate.** The first time, macOS says it cannot verify Beam. Open System Settings → Privacy & Security, scroll to the message about Beam and choose Open Anyway. After that it opens normally.
+- macOS asks once whether Beam may accept incoming connections. Allow it, or other devices cannot reach it.
+- Received files go to your Downloads folder. If a name is taken, the new file gets a number: `photo (2).jpg`.
+- If port 3210 is busy, the app takes the next free one; the address in its window is always the right one.
+- Closing the window quits Beam and stops the server.
+
+The app is the same server in an [Electron](https://www.electronjs.org) window. `npm start` and the tests still need nothing installed.
+
 ## Use it
 
 1. Open Beam on two or more devices. Each one appears on the others with a name you can change (tap it, top right).
@@ -83,6 +107,8 @@ public/index.html    page markup
 public/app.js        page logic
 public/styles.css    styles (light and dark)
 public/vendor/       QR code generator (third party, see below)
+electron/main.js     the Mac app: starts the server, shows the page in a window
+build/               the app icon
 test/                protocol tests
 ```
 
