@@ -21,7 +21,7 @@ npm start
 The terminal prints two addresses and a QR code:
 
 - **This computer**: `http://localhost:3210`
-- **Other devices**: something like `http://192.168.1.23:3210`. Open it on any phone, tablet or laptop on the same Wi-Fi or network, or scan the QR code.
+- **Other devices**: something like `http://192.xxx.x.xx:3210`. Open it on any phone, tablet or laptop on the same Wi-Fi or network, or scan the QR code.
 
 The first time, macOS or Windows may ask whether Node may accept incoming connections. Allow it, or other devices won't be able to reach the page. Press Ctrl+C in the terminal to stop Beam.
 
