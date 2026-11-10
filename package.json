@@ -1,16 +1,51 @@
 {
   "name": "beam",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Browser-based file transfer between devices on the same network. No installs, no accounts, nothing stored.",
   "private": true,
   "license": "MIT",
   "repository": "github:DhananjaySarathe/beam-file-transfer",
-  "main": "server.js",
+  "main": "electron/main.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node --test"
+    "test": "node --test",
+    "app": "electron .",
+    "dist": "electron-builder --mac dmg --arm64 --x64"
   },
   "engines": {
     "node": ">=20"
+  },
+  "author": "Beam contributors",
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "io.github.beam-file-transfer",
+    "productName": "Beam",
+    "artifactName": "Beam-${version}-${arch}.${ext}",
+    "files": [
+      "server.js",
+      "public/**",
+      "electron/**",
+      "package.json",
+      "LICENSE"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "build/icon.png",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "target": [
+        "dmg"
+      ]
+    },
+    "dmg": {
+      "title": "Beam"
+    }
   }
 }
