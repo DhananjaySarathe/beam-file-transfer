@@ -4,11 +4,28 @@
 
 Send files, text and links between your devices from the browser. One computer runs Beam; every other device just opens a web page. No apps, no accounts, no cables.
 
-## Download the Mac app
+## Install the Mac app
 
-On a Mac you can skip the setup below: download Beam from the [latest release](https://github.com/DhananjaySarathe/beam-file-transfer/releases/latest), open the file and drag Beam into Applications. Pick the `arm64` file for Apple Silicon Macs (M1 and later) and the `x64` file for Intel Macs.
+Open Terminal, paste this and press Return:
 
-The app is not signed with an Apple developer certificate, so the first time macOS says it cannot verify it: open System Settings → Privacy & Security, find the message about Beam and choose Open Anyway. To build the app yourself, see [Or use the Mac app](#or-use-the-mac-app) below.
+```bash
+curl -fsSL https://raw.githubusercontent.com/DhananjaySarathe/beam-file-transfer/main/install.sh | bash
+```
+
+It downloads the latest Beam for your Mac (Apple Silicon or Intel), puts it in Applications and opens it. [Read the script](install.sh) first if you like; it is short.
+
+### If you downloaded the .dmg instead and see "Beam" Not Opened
+
+Beam is not signed with a paid Apple developer certificate, so macOS blocks a copy downloaded in a browser. The app is fine; do one of these once:
+
+- Click **Done** on the warning (not Move to Bin). Open **System Settings → Privacy & Security**, scroll down to "Beam was blocked to protect your Mac" and click **Open Anyway**, then confirm.
+- Or run this in Terminal, then open Beam again:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Beam.app
+```
+
+The disk images are on the [latest release](https://github.com/DhananjaySarathe/beam-file-transfer/releases/latest): `arm64` for Apple Silicon Macs (M1 and later), `x64` for Intel Macs. To build the app yourself, see [Or use the Mac app](#or-use-the-mac-app) below.
 
 ## Get it running
 
