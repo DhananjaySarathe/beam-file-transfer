@@ -1,22 +1,39 @@
 # Beam
 
-**Website and downloads: https://dhananjaysarathe.github.io/beam/**
+**Website: https://dhananjaysarathe.github.io/beam/**
 
 Send files, text and links between your devices from the browser. One computer runs Beam; every other device just opens a web page. No apps, no accounts, no cables.
 
 ## Install the Mac app
 
-Open Terminal, paste this and press Return:
+**Install it from Terminal. That way macOS does not block it.**
+
+1. Open **Terminal** on your Mac (press ⌘ Space, type "Terminal", press Return).
+2. Paste this line and press Return:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/DhananjaySarathe/beam-file-transfer/main/install.sh | bash
 ```
 
-It downloads the latest Beam for your Mac (Apple Silicon or Intel), puts it in Applications and opens it. [Read the script](install.sh) first if you like; it is short.
+It downloads the latest Beam for your Mac (Apple Silicon or Intel), puts it in Applications and opens it. Then open the address it shows, or scan its QR code, on your phone or other device.
 
-### If you downloaded the .dmg instead and see "Beam" Not Opened
+You can [read the script](install.sh) before running it; it is short and only downloads Beam's own release file and copies the app into place.
 
-Beam is not signed with a paid Apple developer certificate, so macOS blocks a copy downloaded in a browser. The app is fine; do one of these once:
+### Good to know
+
+- **What you need.** A Mac on macOS 13 (Ventura) or later. Other devices need only a browser and the same Wi-Fi.
+- **One question from macOS.** "Accept incoming connections?" Choose **Allow**, or your other devices cannot reach the Mac.
+- **Where files land.** In the Downloads folder of the device that receives them. Nothing is kept on the Mac in between.
+- **Stopping it.** Close Beam's window. That quits the app; nothing stays running in the background.
+- **Updating.** Run the same install line again. It replaces Beam with the latest version.
+- **Removing it.** Drag Beam from Applications to the Bin. Its small settings folder is `~/Library/Application Support/Beam`.
+- **Use a network you trust.** Beam talks plain HTTP inside your Wi-Fi, so anyone on it can open the page and offer you a file. Nothing arrives unless you accept. Best at home, not on public Wi-Fi.
+- **Not on a Mac?** Windows and Linux can run Beam from the source; see [Get it running](#get-it-running). The app and the install line are for Macs.
+- **Still early.** Tested end to end on an Apple Silicon Mac with Chrome. The Intel build has not been run on an Intel Mac yet; please [open an issue](https://github.com/DhananjaySarathe/beam-file-transfer/issues) if it misbehaves.
+
+### Why not just download it?
+
+You can: the disk images are on the [latest release](https://github.com/DhananjaySarathe/beam-file-transfer/releases/latest) (`arm64` for Apple Silicon Macs, M1 and later; `x64` for Intel Macs). But Beam is not signed with a paid Apple developer certificate, so macOS blocks a copy downloaded in a browser and shows **"Beam" Not Opened**. The app is fine. If you see that, do one of these once:
 
 - Click **Done** on the warning (not Move to Bin). Open **System Settings → Privacy & Security**, scroll down to "Beam was blocked to protect your Mac" and click **Open Anyway**, then confirm.
 - Or run this in Terminal, then open Beam again:
@@ -25,7 +42,7 @@ Beam is not signed with a paid Apple developer certificate, so macOS blocks a co
 xattr -dr com.apple.quarantine /Applications/Beam.app
 ```
 
-The disk images are on the [latest release](https://github.com/DhananjaySarathe/beam-file-transfer/releases/latest): `arm64` for Apple Silicon Macs (M1 and later), `x64` for Intel Macs. To build the app yourself, see [Or use the Mac app](#or-use-the-mac-app) below.
+To build the app yourself, see [Or use the Mac app](#or-use-the-mac-app) below.
 
 ## Get it running
 
